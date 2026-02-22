@@ -2,29 +2,30 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* White */
+    background-color: #ffffff;
 }
 
 /* ================= HEADER ================= */
 header {
-    background-color: #4169E1; /* Royal Blue */
-    padding: 20px;
-    color: #ffffff; /* White */
+    background: linear-gradient(135deg, #1F3C88, #2F5DCC);
+    padding: 25px;
+    color: #ffffff;
     text-align: center;
     position: relative;
 }
 
 header h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 36px;
+    font-size: 38px;
     margin: 0;
-    color: #FFD700; /* Royal Yellow */
+    color: #F5C542; /* Royal Yellow */
+    letter-spacing: 1px;
 }
 
 header nav {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 30px;
 }
 
 header nav ul {
@@ -34,89 +35,104 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 header nav ul li a {
-    color: #ffffff; /* White */
+    color: #ffffff;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #FF0000; /* Red */
+    color: #F5C542;
 }
 
 /* ================= CONTENT ================= */
 .food-gallery {
     padding: 40px;
     text-align: center;
-    background-color: #ffffff; /* White */
 }
 
 .food-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 25px;
 }
 
 .food-item img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(65, 105, 225, 0.4); /* Royal Blue shadow */
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(31, 60, 136, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-item img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(31, 60, 136, 0.35);
 }
 
 .food-detail img {
     width: 50%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 14px;
     display: block;
     margin: 0 auto;
-    border: 4px solid #FFD700; /* Royal Yellow */
+    border: 5px solid #F5C542;
 }
 
+/* ================= LIST ================= */
 ul {
     text-align: left;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 /* ================= FORM ================= */
 textarea {
     width: 100%;
-    height: 100px;
-    padding: 10px;
+    height: 110px;
+    padding: 12px;
     margin-top: 20px;
-    border-radius: 5px;
-    border: 2px solid #4169E1; /* Royal Blue */
+    border-radius: 10px;
+    border: 2px solid #2F5DCC;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #1F3C88;
 }
 
 /* ================= BUTTON ================= */
 button {
-    background-color: #FF0000; /* Red */
-    color: #ffffff; /* White */
-    padding: 10px;
+    background: linear-gradient(135deg, #8B1E3F, #B9375E);
+    color: #ffffff;
+    padding: 12px 22px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: 25px;
+    margin-top: 15px;
     font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-    background-color: #FFD700; /* Royal Yellow */
-    color: #4169E1; /* Royal Blue */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(139, 30, 63, 0.4);
 }
 
 /* ================= FOOTER ================= */
 footer {
-    background-color: #4169E1; /* Royal Blue */
-    color: #ffffff; /* White */
+    background-color: #1F3C88;
+    color: #ffffff;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
     position: fixed;
     width: 100%;
     bottom: 0;
+    font-size: 14px;
 }
