@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Malaysia Food Diary</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="food-detail">
+    <div id="foodDetails">
+        <!-- Content will be filled dynamically based on the selected food -->
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Malaysian Food Diary</p>
+</footer>
+
+<script>
+// Fetch food name from the URL query
+const urlParams = new URLSearchParams(window.location.search);
+const food = urlParams.get('food');
+
+// Food data (description, ingredients, and instructions)
+const foodData = {
+    nasi_lemak: {
+        name: "Nasi Lemak",
+        image: "assets/nasi_lemak.jpg",
+        description: "Nasi Lemak is Malaysia’s national dish, known for its fragrant coconut rice served with spicy sambal, crispy anchovies, roasted peanuts, boiled egg, and fresh cucumber. Rich, aromatic, and comforting, it represents the heart of Malaysian home cooking and street food culture.",
+        ingredients: [
+            "2 cups Jasmine rice",
+            "1 ½ cups Coconut milk",
+            "½ cup Water",
+            "2 Pandan leaves (knotted)",
+            "1 tsp Salt",
+            "15–20 Dried chilies (soaked and blended)",
+            "1 large Onion",
+            "3 cloves Garlic",
+            "1 tbsp Tamarind paste",
+            "2 tbsp Sugar",
+            "Salt to taste",
+            "1 cup Dried anchovies (ikan bilis), fried",
+            "½ cup Peanuts, roasted or fried",
+            "3–4 Eggs, hard-boiled",
+            "1 Cucumber, sliced"
+        ],
+        instructions: [
+            "Prepare Coconut Rice: Wash rice until water runs clear. Cook rice with coconut milk, water, pandan leaves, and salt until fluffy and fragrant. Remove pandan leaves before serving.",
+            "Make Sambal: Blend soaked chilies, onion, and garlic into a smooth paste. Heat oil and sauté paste until fragrant and oil separates. Add tamarind paste, sugar, and salt. Simmer until thick.",
+            "Prepare Sides: Fry anchovies until crispy. Roast or fry peanuts. Boil eggs and slice. Cut cucumber into thin slices.",
+            "Serve: Plate coconut rice with sambal, anchovies, peanuts, egg, and cucumber. Serve warm."
+        ]
+    },
+    roti_canai: {
+        name: "Roti Canai",
+        image: "assets/roti_canai.jpg",
+        description: "Roti Canai is a flaky, golden Malaysian flatbread, known for its crisp layers and soft, chewy interior. Perfect with dhal, curry, or even sweet condensed milk.",
+        ingredients: [
+            "3 ½ cups (500g) all-purpose flour or bread flour",
+            "1 tsp salt",
+            "1 tsp sugar",
+            "1 cup (240–300ml) water (room temp or slightly warm)",
+            "2 tbsp sweetened condensed milk (optional)",
+            "1 egg (optional)",
+            "3–4 tbsp ghee or butter",
+            "Vegetable oil (for soaking)"
+        ],
+        instructions: [
+            "Make the Dough: Combine flour, salt, sugar, milk/egg (if using), and water. Knead for 10–15 mins until smooth and elastic.",
+            "Divide & Rest: Divide into 8–10 balls. Coat each in oil/ghee and refrigerate for at least 6 hours or overnight.",
+            "Stretch: Flatten a dough ball on an oiled surface and stretch it until paper-thin.",
+            "Fold & Coil: Spread butter/ghee, fold into a long strip, and roll into a coil.",
+            "Final Rest: Let the coil rest 15–30 mins.",
+            "Cook: Flatten slightly and pan-fry on medium heat with ghee until golden brown and crispy (2–3 mins per side).",
+            "Serve: Tap or “clap” the sides to fluff up the layers and enjoy warm."
+        ]
+    },
+    asam_laksa: {
+        name: "Asam Laksa",
+        image: "assets/asam_laksa.jpg",
+        description: "Asam Laksa is a bold and tangy Malaysian noodle soup originating from Penang. Made with a tamarind-based fish broth and topped with fresh herbs, it delivers a perfect balance of sour, spicy, sweet, and savory flavours.",
+        ingredients: [
+            "2 medium Mackerel fish (or sardines)",
+            "1.5 liters Water",
+            "3–4 tbsp Tamarind paste",
+            "2 stalks Lemongrass (bruised)",
+            "1 Torch ginger flower (sliced)",
+            "Salt and sugar to taste",
+            "10–12 Dried chilies (soaked)",
+            "1 Onion",
+            "3 cloves Garlic",
+            "1 tbsp Shrimp paste (belacan)",
+            "Thick rice noodles (laksa noodles)",
+            "Cucumber (julienned)",
+            "Red onion (sliced thin)",
+            "Pineapple (thin slices)",
+            "Mint leaves",
+            "Lettuce"
+        ],
+        instructions: [
+            "Prepare Fish Broth: Boil fish in water until cooked. Remove fish, flake the flesh, discard bones, and return flesh to the pot.",
+            "Prepare Spice Paste: Blend soaked chilies, onion, garlic, and shrimp paste until smooth.",
+            "Cook Broth: Add spice paste, lemongrass, torch ginger flower, and tamarind paste into the fish broth. Simmer 20–30 minutes. Season with salt and sugar.",
+            "Prepare Noodles: Cook rice noodles according to package instructions. Drain and set aside.",
+            "Assemble: Place noodles in a bowl, ladle hot broth over, and top with cucumber, onion, pineapple, mint, and lettuce. Add shrimp paste if desired."
+        ]
+    },
+    kuih_lapis: {
+        name: "Kuih Lapis",
+        image: "assets/kuih_lapis.jpg",
+        description: "Kuih Lapis is a traditional layered Malaysian dessert, made with tapioca and rice flour, coconut milk, and pandan for fragrance. Its vibrant layers make it as beautiful as it is delicious.",
+        ingredients: [
+            "300–360g Tapioca flour",
+            "80–150g Rice flour",
+            "400–600ml Coconut milk",
+            "250–500ml Water",
+            "150–300g Sugar",
+            "3/4 tsp Salt",
+            "3–4 Pandan leaves",
+            "Red/Green food coloring or pandan extract"
+        ],
+        instructions: [
+            "Prepare the Batter: Boil water with sugar, salt, and pandan leaves, then cool. Mix tapioca flour, rice flour, and coconut milk; combine with cooled syrup. Strain to remove lumps.",
+            "Divide & Color: Split batter into 2–3 portions and add coloring.",
+            "Prepare Steamer: Grease a 7-inch pan and preheat in steamer 5 mins.",
+            "Steam Layers: Pour first layer (~100–125ml) and steam 5–7 mins until set.",
+            "Repeat: Stir remaining batter, pour next layer, steam. Repeat for all layers.",
+            "Final Steam & Cool: Steam final layer 10–15 mins. Cool completely (preferably 4–6 hours) before slicing."
+        ]
+    }
+};
+
+// Dynamically display the content based on the selected food
+const foodDetail = foodData[food];
+
+document.getElementById('foodDetails').innerHTML = `
+    <h2>${foodDetail.name}</h2>
+    <img src="${foodDetail.image}" alt="${foodDetail.name}">
+    <p>${foodDetail.description}</p>
+    <h3>Ingredients:</h3>
+    <ul>
+        ${foodDetail.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+    </ul>
+    <h3>Instructions:</h3>
+    <p>${foodDetail.instructions.join('<br>')}</p>
+`;
+</script>
+
+</body>
+</html>
