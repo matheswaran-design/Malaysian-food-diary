@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Malaysian Food Diary</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="food-detail">
+    <div id="foodDetails">
+        <!-- Content will be filled dynamically based on the selected food -->
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Malaysian Food Diary</p>
+</footer>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const food = urlParams.get('food');
+
+const foodData = {
+    nasi_lemak: {
+        name: "Nasi Lemak",
+        image: "assets/nasi_lemak.jpg",
+        ingredients: ["2 cups rice", "1 cup coconut milk", "1 onion, sliced", "1 cucumber, sliced", "Hard boiled egg", "Anchovies, fried", "Peanuts, roasted", "Sambal (spicy chili paste)"],
+        instructions: "1. Cook rice with coconut milk, onion, and water. 2. Fry anchovies until crispy. 3. Prepare sambal using chili, onions, and tamarind. 4. Serve rice with boiled egg, sambal, anchovies, peanuts, and cucumber."
+    },
+    roti_canai: {
+        name: "Roti Canai",
+        image: "assets/roti_canai.jpg",
+        ingredients: ["Flour", "Water", "Ghee", "Salt"],
+        instructions: "1. Mix flour, water, ghee, and salt into dough. 2. Flatten dough into a thin circle. 3. Fry in a pan with some oil until golden brown."
+    },
+    asam_laksa: {
+        name: "Asam Laksa",
+        image: "assets/asam_laksa.jpg",
+        ingredients: ["Tamarind broth", "Mackerel fish", "Rice noodles", "Herbs (mint, cucumber)"],
+        instructions: "1. Boil tamarind broth with mackerel fish. 2. Cook rice noodles. 3. Serve with mint and cucumber."
+    },
+    kuih_lapis: {
+        name: "Kuih Lapis",
+        image: "assets/kuih_lapis.jpg",
+        ingredients: ["Rice flour", "Coconut milk", "Sugar", "Pandan leaves for color"],
+        instructions: "1. Mix ingredients to form a batter. 2. Layer the batter and steam each layer. 3. Repeat layers until done."
+    }
+};
+
+const foodDetail = foodData[food];
+
+document.getElementById('foodDetails').innerHTML = `
+    <h2>${foodDetail.name}</h2>
+    <img src="${foodDetail.image}" alt="${foodDetail.name}">
+    <h3>Ingredients:</h3>
+    <ul>
+        ${foodDetail.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+    </ul>
+    <h3>Instructions:</h3>
+    <p>${foodDetail.instructions}</p>
+`;
+</script>
+
+</body>
+</html>
