@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,7 +5,6 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Header Styles */
 header {
     background-color: #f39c12;
     padding: 20px;
@@ -21,7 +19,6 @@ header h1 {
     margin: 0;
 }
 
-/* Navigation Styles */
 header nav {
     position: absolute;
     top: 20px;
@@ -45,7 +42,6 @@ header nav ul li a {
     font-weight: bold;
 }
 
-/* Food Gallery Styles */
 .food-gallery {
     padding: 40px;
     text-align: center;
@@ -72,14 +68,12 @@ header nav ul li a {
     margin: 0 auto;
 }
 
-/* List Styles for Ingredients */
 ul {
     text-align: left;
     display: inline-block;
     margin-top: 10px;
 }
 
-/* Feedback Section Styles */
 textarea {
     width: 100%;
     height: 100px;
@@ -103,7 +97,6 @@ button:hover {
     background-color: #e67e22;
 }
 
-/* Footer Styles */
 footer {
     background-color: #f39c12;
     color: white;
