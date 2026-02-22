@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaysian Food Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Malaysian Food Diary – A Journey Through Flavours and Stories</h1>
+</header>
+
+<section class="intro">
+    <p>Step into Malaysian Food Diary, where every bite tells a story, and every dish invites you on a journey across Malaysia’s rich culinary landscape. Here, food is more than just sustenance—it’s culture, tradition, and a celebration of heritage.</p>
+    <p>Imagine waking up to the fragrant aroma of Nasi Lemak, coconut rice steamed to perfection, served with spicy sambal, crunchy peanuts, and tender anchovies—a breakfast that carries generations of love and care in every spoonful. Later, picture the crisp, flaky layers of Roti Canai, its buttery warmth breaking apart in your hands, perfect for dipping into rich dhal or curry, a simple delight that brings comfort to the soul.</p>
+    <p>Venture further, and the tangy, spicy complexity of Asam Laksa greets you—a bowl of history, tradition, and bold flavours, where tamarind broth, mackerel fish, and fresh herbs dance together in harmony. And for a sweet ending, the colourful, delicate layers of Kuih Lapis melt on your tongue, a treat that’s as much a feast for the eyes as it is for the taste buds, reminding us that Malaysian desserts are crafted with patience, love, and artistry.</p>
+    <p>At Malaysian Food Diary, we don’t just share recipes. We explore the stories behind the food—the people, the traditions, and the moments that make each dish unforgettable.</p>
+</section>
+
+<section class="food-gallery">
+    <h2>Our Famous Dishes</h2>
+    <div class="food-grid">
+        <div class="food-item">
+            <a href="food.html?food=nasi_lemak">
+                <img src="assets/nasi_lemak.jpg" alt="Nasi Lemak">
+                <p>Nasi Lemak</p>
+            </a>
+        </div>
+        <div class="food-item">
+            <a href="food.html?food=roti_canai">
+                <img src="assets/roti_canai.jpg" alt="Roti Canai">
+                <p>Roti Canai</p>
+            </a>
+        </div>
+        <div class="food-item">
+            <a href="food.html?food=asam_laksa">
+                <img src="assets/asam_laksa.jpg" alt="Asam Laksa">
+                <p>Asam Laksa</p>
+            </a>
+        </div>
+        <div class="food-item">
+            <a href="food.html?food=kuih_lapis">
+                <img src="assets/kuih_lapis.jpg" alt="Kuih Lapis">
+                <p>Kuih Lapis</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="feedback">
+    <h3>Feedback</h3>
+    <textarea id="userFeedback" placeholder="Share your feedback or suggestions..."></textarea>
+    <button onclick="submitFeedback()">Submit</button>
+    <div id="feedbackDisplay"></div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Malaysian Food Diary</p>
+</footer>
+
+<script>
+function submitFeedback() {
+    const feedback = document.getElementById('userFeedback').value;
+    const feedbackDisplay = document.getElementById('feedbackDisplay');
+    feedbackDisplay.innerHTML = "<p><strong>Your Feedback:</strong> " + feedback + "</p>";
+    document.getElementById('userFeedback').value = "";  // Clear the textarea
+}
+</script>
+
+</body>
+</html>
