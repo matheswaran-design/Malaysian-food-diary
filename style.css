@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,30 +6,48 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Header Styles */
 header {
     background-color: #f39c12;
-    padding: 10px;
+    padding: 20px;
     color: white;
     text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;  /* Cute font */
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Navigation Styles */
+header nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 header nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
 }
 
 header nav ul li {
-    display: inline;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
 }
 
+/* Food Gallery Styles */
 .food-gallery {
-    padding: 20px;
+    padding: 40px;
     text-align: center;
 }
 
@@ -42,7 +61,7 @@ header nav ul li a {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .food-detail img {
@@ -53,16 +72,21 @@ header nav ul li a {
     margin: 0 auto;
 }
 
+/* List Styles for Ingredients */
 ul {
     text-align: left;
     display: inline-block;
     margin-top: 10px;
 }
 
+/* Feedback Section Styles */
 textarea {
     width: 100%;
     height: 100px;
     padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 button {
@@ -71,12 +95,15 @@ button {
     padding: 10px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #e67e22;
 }
 
+/* Footer Styles */
 footer {
     background-color: #f39c12;
     color: white;
